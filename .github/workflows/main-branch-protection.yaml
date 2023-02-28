@@ -6,6 +6,12 @@ on:
     exclude:
       - main
 jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        run: actions/checkout@v2
   check-main-branch:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
