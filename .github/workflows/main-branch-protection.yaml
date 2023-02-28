@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        run: actions/checkout@v3
+        uses: actions/checkout@v3
   check-main-branch:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
