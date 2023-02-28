@@ -1,6 +1,6 @@
 name: github-actions-workflow
 
-on
+on:
   push:
     branches:
       - '*'
