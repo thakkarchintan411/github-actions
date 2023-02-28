@@ -8,8 +8,7 @@ on:
 jobs:
   check-main-branch:
     runs-on: ubuntu-latest
-    if:
-      - $GITHUB_REF = "refs/heads/main"
+    if: github.ref == 'refs/heads/main'
     steps:
       - name: PRINT MESSAGE
         run: echo "you are not allowed to push to main branch"
