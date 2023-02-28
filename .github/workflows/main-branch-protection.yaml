@@ -12,4 +12,5 @@ jobs:
       - $GITHUB_REF = "refs/heads/main"
     steps:
       - name: PRINT MESSAGE
+      - uses: thakkarchintan411/github-actions
       - run: echo "you are not allowed to push to main branch"
