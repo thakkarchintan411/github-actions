@@ -10,4 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     if:
       - $GITHUB_REF = "refs/heads/main"
-    steps: echo "you are not allowed to push to main branch"
+    steps:
+      - name: PRINT MESSAGE
+      - run: echo "you are not allowed to push to main branch"
