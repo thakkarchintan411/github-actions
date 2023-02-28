@@ -7,14 +7,22 @@ on:
       - main
 jobs:
 
+  # checkout current repo
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+
+  # check if push branch is main branch then exit the process
   check-main-branch:
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
     steps:
-      - name: PRINT MESSAGE
-        run: echo "you are not allowed to push to main branch" exit 1
+      - name: CHECK BRANCH
+        run: |
+          if [ "${{ github.ref }}" = "refs/heads/main" ]; then
+            echo "Branch is main, exiting."
+            exit 0
+          else
+            echo "Branch is not main, continuing."
+          fi
